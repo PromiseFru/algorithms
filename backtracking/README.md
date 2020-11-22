@@ -18,14 +18,13 @@
     6. output(P,c): use the solution c of P, as appropriate to the application.
 
 * The backtracking algorithm reduces the problem to the call bt(root(P)), where bt is the following recursive procedure:
+```
+procedure bt(c) is
+    if reject(P, c) then return
+    if accept(P, c) then output(P, c)
+    s ← first(P, c)
+    while s ≠ NULL do
+        bt(s)
+        s ← next(P, s)
+```
 
-        procedure bt(c) is
-            if reject(P, c) then return
-            if accept(P, c) then output(P, c)
-            s ← first(P, c)
-            while s ≠ NULL do
-                bt(s)
-                s ← next(P, s)
-
-
- 
